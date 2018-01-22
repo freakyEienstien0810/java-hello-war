@@ -21,6 +21,18 @@
         <scope>provided</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+     <repository> 
+       <id>test-release</id>
+       <name>test-release</name>
+       <url>http://192.168.0.6:8081/repository/test-release</url> 
+     </repository> 
+     <snapshotRepository> 
+       <id>test-snapshot</id>
+       <name>test-snapshot</name>
+       <url>http://192.168.0.6:8081/repository/test-snapshot</url> 
+     </snapshotRepository> 
+  </distributionManagement>
   <build>
     <finalName>hello</finalName>
   </build>
