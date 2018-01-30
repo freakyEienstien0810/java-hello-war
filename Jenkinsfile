@@ -20,7 +20,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "mvn deploy"
+                script {
+                    withMaven(mavenSettingsConfig: 'mvnsettings'){
+                    
+                       sh "mvn deploy"
+                    }
+               }
             }
         }
     }
