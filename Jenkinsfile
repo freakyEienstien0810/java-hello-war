@@ -5,7 +5,6 @@ pipeline {
     stages {
         stage('preparation') {
             steps {
-               git 'https://github.com/kuttimani/java-hello-war.git'
                mvnHome = tool 'maven' 
             }
         }
