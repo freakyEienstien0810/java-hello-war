@@ -21,7 +21,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    withMaven(mavenSettingsConfig: 'mvnsettings'){
+                    withMaven(mavenSettingsConfig: '5deea8ee-d268-40da-b255-5f1dde2f4f0e'){
                     
                        sh "mvn deploy"
                     }
