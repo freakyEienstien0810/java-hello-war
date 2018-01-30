@@ -2,7 +2,7 @@ pipeline {
     agent {
        label "master" 
     }
-    tool {
+    tools {
       maven "maven"
     }
     stages {
