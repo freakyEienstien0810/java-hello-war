@@ -6,6 +6,13 @@ pipeline {
       maven "maven"
     }
     stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
         stage('Build') {
             steps {
                 sh "mvn clean package"
@@ -13,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "'${mvnHome}/bin/mvn' deploy"
+                sh "mvn deploy"
             }
         }
     }
