@@ -3,7 +3,7 @@ pipeline {
        label "master" 
     }
     tools {
-      maven "maven"
+      maven "mvn3.4"
     }
     stages {
         stage ('Initialize') {
