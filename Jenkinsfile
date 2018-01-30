@@ -6,15 +6,9 @@ pipeline {
       maven "maven"
     }
     stages {
-        stage('preparation') {
-            steps {
-                def  mvnHome = tool 'maven' 
-            }
-        }
         stage('Build') {
             steps {
-                sh "echo ${mvnHome}"
-                sh "'${mvnHome}/bin/mvn' clean package"
+                sh "mvn clean package"
             }
         }
         stage('Deploy') {
