@@ -1,6 +1,9 @@
 pipeline {
-    agent master {
-         def mvnHome
+    agent {
+       labels "master" 
+    }
+    tool {
+      maven = maven
     }
     stages {
         stage('preparation') {
