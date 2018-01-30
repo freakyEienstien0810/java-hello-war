@@ -1,0 +1,24 @@
+pipeline {
+    agent master {
+         def mvnHome
+    }
+    stages {
+        stage('preparation') {
+            steps {
+               git 'https://github.com/kuttimani/java-hello-war.git'
+               mvnHome = tool 'maven' 
+            }
+        }
+        stage('Build') {
+            steps {
+                sh "echo ${mvnHome}"
+                sh "'${mvnHome}/bin/mvn' clean package"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh "'${mvnHome}/bin/mvn' deploy"
+            }
+        }
+    }
+}
