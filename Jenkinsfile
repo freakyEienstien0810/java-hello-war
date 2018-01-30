@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('preparation') {
             steps {
-               mvnHome = tool 'maven' 
+                def  mvnHome = tool 'maven' 
             }
         }
         stage('Build') {
