@@ -5,9 +5,11 @@ pipeline {
     tools {
       maven "Maven-3.6.1"
     }
-    stage('Build') {
-        steps {
-            bat "mvn clean package"
+    stages {
+        stage('Build') {
+            steps {
+                bat "mvn clean package"
+            }
         }
-    }
+    }  
 }
