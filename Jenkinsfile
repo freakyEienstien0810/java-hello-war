@@ -3,7 +3,7 @@ pipeline {
        label "master" 
     }
     tools {
-      maven "mvn3.4"
+      maven "Maven-3.6.1"
     }
     stage('Build') {
         steps {
